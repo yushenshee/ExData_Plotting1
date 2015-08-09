@@ -8,11 +8,10 @@ rm(data)
 date_time <- paste(as.Date(datasubset$Date), datasubset$Time)
 datasubset$Datetime <- as.POSIXct(date_time)
 
-hist(datasubset$Global_active_power, 
-     xlab = "Global Active Power (kilowatts)", 
-     ylab = "Frequency",
-     main = "Global Active Power", 
-     col = "orangered2")
+plot(datasubset$Global_active_power~datasubset$Datetime, 
+     type = "l",
+     xlab = " ",
+     ylab = "Global Active Power (kilowatts)")
 
-dev.copy(png, file="plot1.png", height=480, width=480)
+dev.copy(png, file="plot2.png", height=480, width=480)
 dev.off()
